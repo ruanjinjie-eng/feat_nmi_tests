@@ -1,0 +1,23 @@
+kernel: 53b5c789c1e7 irqchip/gic-v5: Add NMI support
+qemu:   QEMU emulator version 11.1.50
+pass=20 fail=0
+PASS 01_no_nmi
+PASS 02_pseudo_nmi
+PASS 03_arch_nmi
+PASS 04_pe_nmi_gicv2
+PASS 05_gic_nmi_no_pe
+PASS 06_arch_plus_pseudo
+PASS 07_idreg_nmi_off
+PASS 08_idreg_off_pseudo
+PASS 09_gicv5_arch_nmi
+PASS 10_gicv5_pseudo_arg
+PASS 11_gicv4_arch_nmi
+PASS 12_pseudo_on_gicv2
+PASS 13_arch_stress_hotplug
+PASS 14_pseudo_hardlockup
+PASS 15_arch_hardlockup
+PASS 16_no_nmi_stress
+PASS 17_pseudo_stress
+PASS 18_arch_suspend
+PASS 19_uefi_acpi_arch
+PASS 20_uefi_acpi_pseudo

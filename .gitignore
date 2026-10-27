@@ -1,0 +1,24 @@
+# Kernel/module build output and generated initramfs
+build/
+
+# Generated logs: keep only the runs recorded in RESULTS.md
+logs/*
+!logs/20261023-182747/
+!logs/20261023-182747/**
+!logs/crash-20261023-183111/
+!logs/crash-20261023-183111/**
+!logs/config-20261023-173026/
+!logs/config-20261023-173026/**
+
+# External module build artifacts
+module/*.o
+module/*.ko
+module/*.mod
+module/*.mod.c
+module/Module.symvers
+module/modules.order
+module/.*.cmd
+module/.module-common.o
+
+# Guest init binary
+guest/init

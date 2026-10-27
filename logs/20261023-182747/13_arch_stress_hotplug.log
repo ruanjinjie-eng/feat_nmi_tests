@@ -1,0 +1,841 @@
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x000f0510]
+[    0.000000] Linux version 7.3.0-rc6-00038-g53b5c789c1e7 (root@r00799764-ThinkCentre-M920t-N000) (aarch64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #4 SMP PREEMPT Fri Oct 23 17:13:03 CST 2026
+[    0.000000] KASLR enabled
+[    0.000000] random: crng init done
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] efi: UEFI not found.
+[    0.000000] earlycon: pl11 MMIO:0x0000000009000000 (options '')
+[    0.000000] printk: legacy bootconsole [pl11] enabled
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x7fdeec00-0x7fdf12ff]
+[    0.000000] cma: Reserved 32 MiB at 0x000000007dc00000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] percpu: Embedded 26 pages/cpu s67864 r8192 d30440 u106496
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Address authentication (IMP DEF algorithm)
+[    0.000000] CPU features: detected: GICv3 CPU interface
+[    0.000000] CPU features: detected: HCRX_EL2 register
+[    0.000000] CPU features: detected: Stage-1 Permission Indirection Extension (S1PIE)
+[    0.000000] CPU features: detected: 52-bit Virtual Addressing (LPA2)
+[    0.000000] CPU features: detected: Store Only MTE Tag Check
+[    0.000000] CPU features: detected: Non-maskable Interrupts
+[    0.000000] CPU features: detected: Spectre-v4
+[    0.000000] alternatives: applying boot alternatives
+[    0.000000] Kernel command line: console=ttyAMA0,115200 earlycon log_buf_len=2M panic=-1 nmi_expect=supports:1,active:1,pseudo:0,gic_nmi:1,pseudo_log:0,arch_off_log:0,nmi_irqs:gt0,ipi_nmi:gt0,pmu_log:1,fast:1,bc_fast:1,bc_cpus:gt0,sysrq_bt:1,perf_ok:1,stress_ok:1,stress_pmu_delta:gt0,stress_bt:gt0,hotplug_ok:1,retest_fast:1 nmi_extra=sysrq,perf,stress,hotplug nmi_runs=3
+[    0.000000] Unknown kernel command line parameters "nmi_expect=supports:1,active:1,pseudo:0,gic_nmi:1,pseudo_log:0,arch_off_log:0,nmi_irqs:gt0,ipi_nmi:gt0,pmu_log:1,fast:1,bc_fast:1,bc_cpus:gt0,sysrq_bt:1,perf_ok:1,stress_ok:1,stress_pmu_delta:gt0,stress_bt:gt0,hotplug_ok:1,retest_fast:1 nmi_extra=sysrq,perf,stress,hotplug nmi_runs=3", will be passed to user space.
+[    0.000000] printk: log buffer data + meta data: 2097152 + 7340032 = 9437184 bytes
+[    0.000000] printk: early log buf free: 128152(97%)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] software IO TLB: SWIOTLB bounce buffer size adjusted to 1MB
+[    0.000000] software IO TLB: area num 2.
+[    0.000000] software IO TLB: mapped [mem 0x000000007c100000-0x000000007c200000] (1MB)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 262144
+[    0.000000] Policy zone: DMA
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=2.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Non-maskable interrupt property is supported
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GICv3: GICv3 features: 16 PPIs
+[    0.000000] GICv3: GICD_CTLR.DS=1, SCR_EL3.FIQ=0
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000080a0000
+[    0.000000] ITS [mem 0x08080000-0x0809ffff]
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Devices @43860000 (indirect, esz 8, psz 64K, shr 1)
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Interrupt Collections @43870000 (flat, esz 8, psz 64K, shr 1)
+[    0.000000] GICv3: using LPI property table @0x0000000043880000
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x0000000043890000
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.000000] arch_timer: cp15 timer running at 1000.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000084] sched_clock: 61 bits at 1000MHz, resolution 1ns, wraps every 4398046511103ns
+[    0.026065] Console: colour dummy device 80x25
+[    0.034862] Calibrating delay loop (skipped), value calculated using timer frequency.. 2000.00 BogoMIPS (lpj=4000000)
+[    0.035912] pid_max: default: 32768 minimum: 301
+[    0.046600] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.046951] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.058283] VFS: Finished mounting rootfs on nullfs
+[    0.116196] rcu: Hierarchical SRCU implementation.
+[    0.116462] rcu: 	Max phase no-delay instances is 1000.
+[    0.119004] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    0.129952] EFI services will not be available.
+[    0.133442] smp: Bringing up secondary CPUs ...
+[    0.144339] Detected PIPT I-cache on CPU1
+[    0.148351] GICv3: CPU1: found redistributor 1 region 0:0x00000000080c0000
+[    0.149611] GICv3: CPU1: using allocated LPI pending table @0x00000000438a0000
+[    0.152619] CPU1: Booted secondary processor 0x0000000001 [0x000f0510]
+[    0.157811] smp: Brought up 1 node, 2 CPUs
+[    0.158881] SMP: Total of 2 processors activated.
+[    0.159172] CPU: All CPU(s) started at EL1
+[    0.159733] CPU features: detected: Branch Target Identification
+[    0.160282] CPU features: detected: 32-bit EL0 Support
+[    0.160451] CPU features: detected: ARMv8.4 Translation Table Level
+[    0.160714] CPU features: detected: Instruction cache invalidation not required for I/D coherence
+[    0.161117] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[    0.161554] CPU features: detected: Common not Private translations
+[    0.161756] CPU features: detected: CRC32 instructions
+[    0.161898] CPU features: detected: Data independent timing control (DIT)
+[    0.162075] CPU features: detected: E0PD
+[    0.162191] CPU features: detected: Enhanced Counter Virtualization
+[    0.162449] CPU features: detected: Enhanced Counter Virtualization (CNTPOFF)
+[    0.162676] CPU features: detected: Enhanced Privileged Access Never
+[    0.162841] CPU features: detected: Enhanced Virtualization Traps
+[    0.162997] CPU features: detected: FPMR
+[    0.163108] CPU features: detected: Fine Grained Traps
+[    0.163255] CPU features: detected: Guarded Control Stack (GCS)
+[    0.163499] CPU features: detected: Generic authentication (IMP DEF algorithm)
+[    0.164164] CPU features: detected: RCpc load-acquire (LDAPR)
+[    0.164449] CPU features: detected: 52-bit Virtual Addressing for KVM (LPA2)
+[    0.164710] CPU features: detected: LSE atomic instructions
+[    0.164875] CPU features: detected: Memory Copy and Memory Set instructions
+[    0.165057] CPU features: detected: Privileged Access Never
+[    0.165244] CPU features: detected: PMUv3
+[    0.165363] CPU features: detected: SCTLR2
+[    0.165477] CPU features: detected: RAS Extension Support
+[    0.165729] CPU features: detected: Random Number Generator
+[    0.165882] CPU features: detected: Speculation barrier (SB)
+[    0.166029] CPU features: detected: Stage-2 Force Write-Back
+[    0.166176] CPU features: detected: Trap EL0 IMPLEMENTATION DEFINED functionality
+[    0.166360] CPU features: detected: TLB range maintenance instructions
+[    0.166553] CPU features: detected: WFx with timeout
+[    0.166741] CPU features: detected: XNX
+[    0.166923] CPU features: detected: Memory Partitioning And Monitoring
+[    0.167132] CPU features: detected: FAR on MTE Tag Check Fault
+[    0.167288] CPU features: detected: Scalable Matrix Extension
+[    0.167438] CPU features: detected: FA64
+[    0.167561] CPU features: detected: SME2
+[    0.167672] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    0.167845] CPU features: detected: Scalable Vector Extension
+[    0.187117] alternatives: applying system-wide alternatives
+[    0.208695] CPU features: detected: Hardware dirty bit management on CPU0-1
+[    0.210684] SVE: maximum available vector length 256 bytes per vector
+[    0.211149] SVE: default vector length 64 bytes per vector
+[    0.211669] SME: minimum available vector length 16 bytes per vector
+[    0.212219] SME: maximum available vector length 256 bytes per vector
+[    0.212583] SME: default vector length 32 bytes per vector
+[    0.243393] Memory: 927212K/1048576K available (17728K kernel code, 5658K rwdata, 14524K rodata, 13376K init, 700K bss, 85160K reserved, 32768K cma-reserved)
+[    0.289113] devtmpfs: initialized
+[    0.348381] posixtimers hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.349495] futex hash table entries: 512 (32768 bytes on 1 NUMA nodes, total 32 KiB, linear).
+[    0.353193] 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
+[    0.353477] 0 pages in range for non-PLT usage
+[    0.353559] 511216 pages in range for PLT usage
+[    0.383072] DMI: not present or invalid.
+[    0.411364] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.433318] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.434011] audit: initializing netlink subsys (disabled)
+[    0.437326] audit: type=2000 audit(0.384:1): state=initialized audit_enabled=0 res=1
+[    0.456744] thermal_sys: Registered thermal governor 'step_wise'
+[    0.456917] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.458496] cpuidle: using governor menu
+[    0.462422] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.464046] ASID allocator initialised with 65536 entries
+[    0.491645] Serial: AMBA PL011 UART driver
+[    0.605102] 9000000.pl011: ttyAMA0 MMIO:0x0000000009000000 (irq = 13, base_baud = 0) is a PL011 rev1
+[    0.607960] printk: console [ttyAMA0] enabled
+[    0.607960] printk: console [ttyAMA0] enabled
+[    0.609352] printk: legacy bootconsole [pl11] disabled
+[    0.609352] printk: legacy bootconsole [pl11] disabled
+[    0.639466] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.639602] HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.639648] HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.639661] HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+[    0.639677] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.639688] HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.639704] HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.639715] HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+[    0.656412] ACPI: Interpreter disabled.
+[    0.677612] iommu: Default domain type: Translated
+[    0.677692] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.681745] SCSI subsystem initialized
+[    0.685420] usbcore: registered new interface driver usbfs
+[    0.685851] usbcore: registered new interface driver hub
+[    0.686064] usbcore: registered new device driver usb
+[    0.690711] pps_core: LinuxPPS API ver. 1 registered
+[    0.690742] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.690836] PTP clock support registered
+[    0.691672] EDAC MC: Ver: 3.0.0
+[    0.694748] scmi_core: SCMI protocol bus registered
+[    0.702363] FPGA manager framework
+[    0.718179] vgaarb: loaded
+[    0.721271] clocksource: Switched to clocksource arch_sys_counter
+[    0.727734] VFS: Disk quotas dquot_6.6.0
+[    0.727987] VFS: Dquot-cache hash table entries: 512 (4096 bytes)
+[    0.733383] pnp: PnP ACPI: disabled
+[    0.777624] NET: Registered PF_INET protocol family
+[    0.779428] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.784441] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.784558] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.784657] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.784923] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    0.785291] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.786726] UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.788238] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.792526] RPC: Registered named UNIX socket transport module.
+[    0.792594] RPC: Registered udp transport module.
+[    0.792612] RPC: Registered tcp transport module.
+[    0.792626] RPC: Registered tcp-with-tls transport module.
+[    0.792640] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.792766] PCI: CLS 0 bytes, default 64
+[    0.797869] kvm [1]: HYP mode not available
+[    0.800496] Unpacking initramfs...
+[    0.806023] Initialise system trusted keyrings
+[    0.807951] workingset: timestamp_bits=42 (anon: 37) max_order=18 bucket_order=0 (anon: 0)
+[    0.812463] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.816422] NFS: Registering the id_resolver key type
+[    0.816843] Key type id_resolver registered
+[    0.816885] Key type id_legacy registered
+[    0.818272] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.818404] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    0.822838] Key type asymmetric registered
+[    0.822941] Asymmetric key parser 'x509' registered
+[    0.823206] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.823373] io scheduler mq-deadline registered
+[    0.823458] io scheduler kyber registered
+[    0.823915] io scheduler bfq registered
+[    0.837243] Freeing initrd memory: 304K
+[    0.887988] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    0.898180] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.904835] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.905744] pci-host-generic 4010000000.pcie:       IO 0x003eff0000..0x003effffff -> 0x0000000000
+[    0.906331] pci-host-generic 4010000000.pcie:      MEM 0x0010000000..0x003efeffff -> 0x0010000000
+[    0.906408] pci-host-generic 4010000000.pcie:      MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.907200] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    0.907899] pci-host-generic 4010000000.pcie: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+[    0.910008] pci-host-generic 4010000000.pcie: PCI host bridge to bus 0000:00
+[    0.910333] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.910424] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    0.910487] pci_bus 0000:00: root bus resource [mem 0x10000000-0x3efeffff]
+[    0.910533] pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff]
+[    0.912369] pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000 conventional PCI endpoint
+[    0.920089] pci 0000:00:01.0: [1af4:1000] type 00 class 0x020000 conventional PCI endpoint
+[    0.920415] pci 0000:00:01.0: BAR 0 [io  0x0000-0x001f]
+[    0.920490] pci 0000:00:01.0: BAR 1 [mem 0x00000000-0x00000fff]
+[    0.920559] pci 0000:00:01.0: BAR 4 [mem 0x00000000-0x00003fff 64bit pref]
+[    0.920658] pci 0000:00:01.0: ROM [mem 0x00000000-0x0003ffff pref]
+[    0.925748] pci 0000:00:01.0: ROM [mem 0x10000000-0x1003ffff pref]: assigned
+[    0.926055] pci 0000:00:01.0: BAR 4 [mem 0x8000000000-0x8000003fff 64bit pref]: assigned
+[    0.926266] pci 0000:00:01.0: BAR 1 [mem 0x10040000-0x10040fff]: assigned
+[    0.926315] pci 0000:00:01.0: BAR 0 [io  0x1000-0x101f]: assigned
+[    0.926714] pci_bus 0000:00: resource 4 [io  0x0000-0xffff]
+[    0.926794] pci_bus 0000:00: resource 5 [mem 0x10000000-0x3efeffff]
+[    0.926822] pci_bus 0000:00: resource 6 [mem 0x8000000000-0xffffffffff]
+[    1.080595] virtio-pci 0000:00:01.0: enabling device (0000 -> 0003)
+[    1.118440] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.138164] msm_serial: driver initialized
+[    1.140527] SuperH (H)SCI(F) driver initialized
+[    1.141537] STM32 USART driver initialized
+[    1.186365] loop: module loaded
+[    1.191922] megasas: 07.734.00.00-rc1
+[    1.201816] physmap-flash 0.flash: physmap platform flash device: [mem 0x00000000-0x03ffffff]
+[    1.203444] 0.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+[    1.203924] Intel/Sharp Extended Query Table at 0x0031
+[    1.204760] Using buffer write method
+[    1.205551] physmap-flash 0.flash: physmap platform flash device: [mem 0x04000000-0x07ffffff]
+[    1.206214] 0.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+[    1.206269] Intel/Sharp Extended Query Table at 0x0031
+[    1.206822] Using buffer write method
+[    1.206978] Concatenating MTD devices:
+[    1.207018] (0): "0.flash"
+[    1.207054] (1): "0.flash"
+[    1.207103] into device "0.flash"
+[    1.257465] tun: Universal TUN/TAP device driver, 1.6
+[    1.285723] VFIO - User Level meta-driver version: 0.3
+[    1.303965] usbcore: registered new interface driver usb-storage
+[    1.323798] rtc-pl031 9010000.pl031: registered as rtc0
+[    1.324567] rtc-pl031 9010000.pl031: setting system clock to 2026-10-23T10:29:11 UTC (1792751351)
+[    1.328357] i2c_dev: i2c /dev entries driver
+[    1.394051] usbcore: registered new interface driver usbhid
+[    1.394095] usbhid: USB HID core driver
+[    1.414853] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 (0,8000003f) counters available, using NMIs
+[    1.425972] NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
+[    1.446435] NET: Registered PF_INET6 protocol family
+[    1.455404] Segment Routing with IPv6
+[    1.455663] In-situ OAM (IOAM) with IPv6
+[    1.456391] NET: Registered PF_PACKET protocol family
+[    1.457654] Key type dns_resolver registered
+[    1.529884] registered taskstats version 1
+[    1.532187] Loading compiled-in X.509 certificates
+[    1.576423] Demotion targets for Node 0: null
+[    1.587901] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.596747] clk: Disabling unused clocks
+[    1.597505] PM: genpd: Disabling unused power domains
+[    2.070080] Freeing unused kernel memory: 13376K
+[    2.071791] Run /init as init process
+[    2.139490] nmi_probe: loading out-of-tree module taints kernel.
+[    2.177799] Sending NMI from CPU 0 to CPUs 1:
+[    2.178268] NMI backtrace for cpu 1
+[    2.178865] CPU: 1 UID: 0 PID: 59 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    2.179033] Tainted: [O]=OOT_MODULE
+[    2.179059] Hardware name: linux,dummy-virt (DT)
+[    2.179227] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[    2.179281] pc : arch_counter_get_cntvct+0x8/0x18
+[    2.179624] lr : arch_counter_read+0x18/0x24
+[    2.179660] sp : ffff800080483e20
+[    2.179687] x29: ffff800080483e20 x28: 0000000000000000 x27: 0000000000000000
+[    2.180225] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[    2.180267] x23: ffff9e845dda1508 x22: ffff80008002b818 x21: 00000000000003f6
+[    2.180303] x20: 0000000068d96894 x19: ffff9e847e67eac0 x18: 0000000006668064
+[    2.180351] x17: ffff9e847e546760 x16: ffff9e847b57518c x15: fff00000043de200
+[    2.180389] x14: 000096f4ca0ef30e x13: 000000000000010f x12: 0000000000000000
+[    2.180424] x11: 00000000000000c0 x10: 479943ffe2d27d2d x9 : d4e61b99fc50803e
+[    2.180496] x8 : fff00000043df138 x7 : fff000003fcde180 x6 : 0000000000000000
+[    2.180555] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 00000000001d8eba
+[    2.180589] x2 : 000a7d8c00000000 x1 : ffff9e847c24be00 x0 : 000000008e10622c
+[    2.180720] Call trace:
+[    2.180910]  arch_counter_get_cntvct+0x8/0x18 (P)
+[    2.181061]  ktime_get+0x40/0xcc
+[    2.181128]  holder_fn+0x94/0x130 [nmi_probe]
+[    2.181528]  kthread+0x118/0x124
+[    2.181556]  ret_from_fork+0x10/0x20
+[    3.677737] perf: interrupt took too long (3656 > 2500), lowering kernel.perf_event_max_sample_rate to 54500
+[    3.685378] Sending NMI from CPU 0 to CPUs 1:
+[    3.685468] NMI backtrace for cpu 1
+[    3.685505] CPU: 1 UID: 0 PID: 60 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    3.685555] Tainted: [O]=OOT_MODULE
+[    3.685565] Hardware name: linux,dummy-virt (DT)
+[    3.685577] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[    3.685601] pc : arch_counter_get_cntvct+0x8/0x18
+[    3.685632] lr : arch_counter_read+0x18/0x24
+[    3.685654] sp : ffff80008048be20
+[    3.685663] x29: ffff80008048be20 x28: 0000000000000000 x27: 0000000000000000
+[    3.685707] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[    3.685742] x23: ffff9e845dda1508 x22: ffff80008002b818 x21: 0000000000000400
+[    3.685777] x20: 00000000a4743294 x19: ffff9e847e67eac0 x18: 0000000000000001
+[    3.685811] x17: ffff9e847e546760 x16: ffff9e847b57518c x15: fff00000049a10c0
+[    3.685846] x14: 0000000000000000 x13: 0000000000000000 x12: 0000000000000000
+[    3.685882] x11: 00000000000000c0 x10: 6f78fef2efd89067 x9 : 1833ab2301193b6f
+[    3.685916] x8 : fff00000049a1ff8 x7 : fff000003fcde180 x6 : 0000000000000000
+[    3.685950] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 0000000000166e02
+[    3.685983] x2 : 0019a14780000000 x1 : ffff9e847c24be00 x0 : 00000000e7eb8190
+[    3.686018] Call trace:
+[    3.686030]  arch_counter_get_cntvct+0x8/0x18 (P)
+[    3.686059]  ktime_get+0x40/0xcc
+[    3.686084]  holder_fn+0x94/0x130 [nmi_probe]
+[    3.686119]  kthread+0x118/0x124
+[    3.686143]  ret_from_fork+0x10/0x20
+[    5.198193] Sending NMI from CPU 0 to CPUs 1:
+[    5.198366] NMI backtrace for cpu 1
+[    5.198431] CPU: 1 UID: 0 PID: 61 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    5.198524] Tainted: [O]=OOT_MODULE
+[    5.198551] Hardware name: linux,dummy-virt (DT)
+[    5.198584] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[    5.198642] pc : arch_counter_get_cntvct+0x8/0x18
+[    5.198704] lr : arch_counter_read+0x18/0x24
+[    5.198755] sp : ffff800080483e20
+[    5.198780] x29: ffff800080483e20 x28: 0000000000000000 x27: 0000000000000000
+[    5.198887] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[    5.198983] x23: ffff9e845dda1508 x22: ffff80008002b818 x21: 000000000000040c
+[    5.199079] x20: 000000011ba9c694 x19: ffff9e847e67eac0 x18: 0000000000000000
+[    5.199175] x17: 0000000028d1bb74 x16: ffff9e847b57518c x15: fff00000053c0080
+[    5.199270] x14: 00000000a26226f4 x13: 0000000000000375 x12: 0000000000000000
+[    5.199385] x11: 00000000000000c0 x10: be1f6c8edcef9bb7 x9 : a77f85c80cb58526
+[    5.199481] x8 : fff00000053c0fb8 x7 : fff000003fcde180 x6 : 0000000000000000
+[    5.199582] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 000000000023b164
+[    5.199677] x2 : 000b162280000000 x1 : ffff9e847c24be00 x0 : 0000000142181ecc
+[    5.199772] Call trace:
+[    5.199799]  arch_counter_get_cntvct+0x8/0x18 (P)
+[    5.199874]  ktime_get+0x40/0xcc
+[    5.199934]  holder_fn+0x94/0x130 [nmi_probe]
+[    5.200019]  kthread+0x118/0x124
+[    5.200079]  ret_from_fork+0x10/0x20
+[    6.705483] Sending NMI from CPU 0 to CPUs 1:
+[    6.705627] NMI backtrace for cpu 1
+[    6.705669] CPU: 1 UID: 0 PID: 62 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    6.705710] Tainted: [O]=OOT_MODULE
+[    6.705722] Hardware name: linux,dummy-virt (DT)
+[    6.705736] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[    6.705759] pc : arch_counter_get_cntvct+0x8/0x18
+[    6.705794] lr : arch_counter_read+0x18/0x24
+[    6.705817] sp : ffff800080483e20
+[    6.705827] x29: ffff800080483e20 x28: 0000000000000000 x27: 0000000000000000
+[    6.705870] x26: 0000000000000000 x25: 0000000000000000 x24: fff000000540be54
+[    6.705906] x23: ffff9e845dda1508 x22: ffff80008002b8a8 x21: 0000000000000418
+[    6.705941] x20: 0000000157449094 x19: ffff9e847e67eac0 x18: 0000000000000014
+[    6.705976] x17: 0000000045910f58 x16: ffff9e847b57518c x15: fff00000049a6200
+[    6.706011] x14: 0000b5b85655986e x13: 000000000000004a x12: 0000000000000000
+[    6.706046] x11: 00000000000000c0 x10: 2d14322f73ccf725 x9 : 09a59c83bb360510
+[    6.706082] x8 : fff00000049a7138 x7 : fff000003fcde180 x6 : 0000000000000000
+[    6.706115] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 000000000018a0a6
+[    6.706149] x2 : 001a39de00000000 x1 : ffff9e847c24be00 x0 : 000000019bef4f2d
+[    6.706185] Call trace:
+[    6.706197]  arch_counter_get_cntvct+0x8/0x18 (P)
+[    6.706227]  ktime_get+0x40/0xcc
+[    6.706254]  holder_fn+0x94/0x130 [nmi_probe]
+[    6.706292]  kthread+0x118/0x124
+[    6.706316]  ret_from_fork+0x10/0x20
+[    8.213272] Sending NMI from CPU 0 to CPUs 1:
+[    9.713322] NMI backtrace for cpu 1
+[    9.713438] CPU: 1 UID: 0 PID: 63 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    9.713532] Tainted: [O]=OOT_MODULE
+[    9.713561] Hardware name: linux,dummy-virt (DT)
+[    9.713594] pstate: 81400005 (Nzcv daif -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[    9.713651] pc : holder_fn+0xa8/0x130 [nmi_probe]
+[    9.713737] lr : holder_fn+0x94/0x130 [nmi_probe]
+[    9.713794] sp : ffff800080483e60
+[    9.713819] x29: ffff800080483e60 x28: 0000000000000000 x27: 0000000000000000
+[    9.713909] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4178
+[    9.713982] x23: ffff9e845dda1508 x22: ffff80008002b818 x21: fff00000043de180
+[    9.714048] x20: 000000023f153699 x19: ffff9e845dda4178 x18: 0000000000000000
+[    9.714114] x17: 00000000226067b6 x16: ffff9e847b57518c x15: fff00000043de200
+[    9.714180] x14: 000000007b3807d8 x13: 000000000000035e x12: 0000000000000000
+[    9.714246] x11: 00000000000000c0 x10: 7e005b573401efa4 x9 : 61163c3bcb04ef82
+[    9.714312] x8 : fff00000043df138 x7 : fff000003fcde180 x6 : 0000000000000000
+[    9.714378] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 0000000000127b87
+[    9.714443] x2 : 001a76e700000000 x1 : 00000000000004ba x0 : 0000000000000001
+[    9.714514] Call trace:
+[    9.714528]  holder_fn+0xa8/0x130 [nmi_probe] (P)
+[    9.714566]  kthread+0x118/0x124
+[    9.714597]  ret_from_fork+0x10/0x20
+[    9.721910] nmi_probe: supports=1 active=1 pseudo=0 single=3/3 bc=1/1 irqflags=1 kprobe=0/0
+NMI_TEST: supports=1 active=1 pseudo=0 runs=3 fast_runs=3 slow_runs=0 last_delta_us=2288 min_delta_us=1161 max_delta_us=4949 fast=1
+NMI_TEST: gic_nmi=1 gic_nmi_log=1 pseudo_log=0 arch_off_log=0 pmu_log=1 pmu_present=1
+NMI_TEST: nmi_irqs=4 ipi_nmi=3 ppi_nmi=1 other_nmi=0 irq_list=(null)@23,(null)@7,(null)@6,(null)@3,
+NMI_TEST: bc_runs=1 bc_fast_runs=1 bc_cpus=1 bc_last_delta_us=1208 bc_min_delta_us=1208 bc_max_delta_us=1208 bc_fast=1
+NMI_TEST: irqflags_ok=1 allint_clear_on_disable=1 allint_reported=1 pmr_irq_disable=-1
+NMI_TEST: kprobe_rc=0 kprobe_hits=1 kprobe_msr_reject_rc=-22 kprobe_mrs_reject_rc=-22
+NMI_TEST: random_kprobe_rc=0 random_hits=502 random_in_nmi=0
+NMI_TEST: allint_mask_delta_us=1501622 allint_mask_ok=1
+[    9.745580] sysrq: Show backtrace of all active CPUs
+[    9.745680] NMI backtrace for cpu 0
+[    9.745787] CPU: 0 UID: 0 PID: 1 Comm: init Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[    9.745827] Tainted: [O]=OOT_MODULE
+[    9.745839] Hardware name: linux,dummy-virt (DT)
+[    9.745867] Call trace:
+[    9.745906]  show_stack+0x18/0x24 (C)
+[    9.745946]  dump_stack_lvl+0x110/0x218
+[    9.745975]  dump_stack+0x18/0x24
+[    9.745998]  nmi_cpu_backtrace+0x22c/0x2f0
+[    9.746023]  nmi_trigger_cpumask_backtrace+0x208/0x2bc
+[    9.746048]  arch_trigger_cpumask_backtrace+0x18/0x24
+[    9.746075]  cpumask_backtrace+0x10/0x1c
+[    9.746098]  sysrq_handle_showallcpus+0x1c/0x28
+[    9.746127]  __handle_sysrq+0xd4/0x1b8
+[    9.746152]  write_sysrq_trigger+0xc0/0xd8
+[    9.746176]  proc_reg_write+0x9c/0xf0
+[    9.746202]  vfs_write+0xd4/0x370
+[    9.746227]  ksys_write+0x70/0x108
+[    9.746250]  __arm64_sys_write+0x18/0x24
+[    9.746272]  invoke_syscall+0x54/0x10c
+[    9.746296]  el0_svc_common.constprop.0+0x40/0xe0
+[    9.746318]  do_el0_svc+0x1c/0x28
+[    9.746340]  el0_svc+0x148/0xa04
+[    9.746366]  el0t_64_sync_handler+0x10c/0x208
+[    9.746390]  el0t_64_sync+0x1ac/0x1b0
+[    9.746492] Sending NMI from CPU 0 to CPUs 1:
+[    9.746585] NMI backtrace for cpu 1 skipped: idling at cpu_do_idle+0x50/0x380
+[   10.019883] perf: interrupt took too long (4674 > 4570), lowering kernel.perf_event_max_sample_rate to 42750
+NMI_TEST: sysrq_bt=1
+[   10.297385] perf: interrupt took too long (16375 > 5842), lowering kernel.perf_event_max_sample_rate to 12000
+[   10.428439] perf: interrupt took too long (20568 > 20468), lowering kernel.perf_event_max_sample_rate to 9500
+NMI_TEST: perf_count=246905698 perf_irq_delta=123 perf_ok=1
+[   10.571999] sysrq: Show backtrace of all active CPUs
+[   10.572164] NMI backtrace for cpu 1
+[   10.572199] CPU: 1 UID: 0 PID: 64 Comm: init Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.572237] Tainted: [O]=OOT_MODULE
+[   10.572248] Hardware name: linux,dummy-virt (DT)
+[   10.572313] Call trace:
+[   10.572386]  show_stack+0x18/0x24 (C)
+[   10.572440]  dump_stack_lvl+0x110/0x218
+[   10.572478]  dump_stack+0x18/0x24
+[   10.572505]  nmi_cpu_backtrace+0x22c/0x2f0
+[   10.572597]  nmi_trigger_cpumask_backtrace+0x208/0x2bc
+[   10.572623]  arch_trigger_cpumask_backtrace+0x18/0x24
+[   10.572656]  cpumask_backtrace+0x10/0x1c
+[   10.572682]  sysrq_handle_showallcpus+0x1c/0x28
+[   10.572785]  __handle_sysrq+0xd4/0x1b8
+[   10.572814]  write_sysrq_trigger+0xc0/0xd8
+[   10.572837]  proc_reg_write+0x9c/0xf0
+[   10.572864]  vfs_write+0xd4/0x370
+[   10.572889]  ksys_write+0x70/0x108
+[   10.572925]  __arm64_sys_write+0x18/0x24
+[   10.573006]  invoke_syscall+0x54/0x10c
+[   10.573043]  el0_svc_common.constprop.0+0x40/0xe0
+[   10.573083]  do_el0_svc+0x1c/0x28
+[   10.573176]  el0_svc+0x148/0xa04
+[   10.573224]  el0t_64_sync_handler+0x10c/0x208
+[   10.573268]  el0t_64_sync+0x1ac/0x1b0
+[   10.573694] Sending NMI from CPU 1 to CPUs 0:
+[   10.573737] NMI backtrace for cpu 0
+[   10.573777] CPU: 0 UID: 0 PID: 30 Comm: pr/ttyAMA0 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.573817] Tainted: [O]=OOT_MODULE
+[   10.573835] Hardware name: linux,dummy-virt (DT)
+[   10.573859] pstate: 814000c5 (Nzcv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   10.573891] pc : panic_on_other_cpu+0x0/0x30
+[   10.573921] lr : nbcon_context_try_acquire+0x6c/0x404
+[   10.573943] sp : ffff80008036bd40
+[   10.573953] x29: ffff80008036bd50 x28: 0000000000000000 x27: 0000000000000000
+[   10.574003] x26: ffff9e847e5436a0 x25: 0000000000000000 x24: fff0000003aa8000
+[   10.574039] x23: 0000000000000000 x22: 00000000c0000020 x21: 0000000000000000
+[   10.574073] x20: ffff9e847e5436a0 x19: ffff80008036bdf0 x18: 0000000000000000
+[   10.574112] x17: 0000000000000000 x16: 0000000000000000 x15: fff0000003aa8080
+[   10.574149] x14: 0000000000000000 x13: fff000003c300000 x12: 00000000000001c9
+[   10.574185] x11: 000000000000055b x10: fff000003c882ad8 x9 : fff000003c300000
+[   10.574220] x8 : fff000003c880000 x7 : ffffffffffe07360 x6 : 00000000000001c9
+[   10.574254] x5 : 00000000000001a7 x4 : bfffffffffff01c9 x3 : 0000000000000000
+[   10.574287] x2 : 0000000000000000 x1 : 0000000000000000 x0 : 0000000000000000
+[   10.574330] Call trace:
+[   10.574341]  panic_on_other_cpu+0x0/0x30 (P)
+[   10.574374]  nbcon_emit_one+0x6c/0x100
+[   10.574401]  nbcon_kthread_func+0x180/0x1fc
+[   10.574432]  kthread+0x118/0x124
+[   10.574457]  ret_from_fork+0x10/0x20
+[   10.598101] perf: interrupt took too long (25902 > 25710), lowering kernel.perf_event_max_sample_rate to 7500
+[   10.721606] perf: interrupt took too long (32390 > 32377), lowering kernel.perf_event_max_sample_rate to 6000
+[   10.742525] perf: interrupt took too long (40499 > 40487), lowering kernel.perf_event_max_sample_rate to 4750
+[   10.779908] sysrq: Show backtrace of all active CPUs
+[   10.780152] NMI backtrace for cpu 1
+[   10.780335] CPU: 1 UID: 0 PID: 64 Comm: init Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.780443] Tainted: [O]=OOT_MODULE
+[   10.780580] Hardware name: linux,dummy-virt (DT)
+[   10.780616] Call trace:
+[   10.780645]  show_stack+0x18/0x24 (C)
+[   10.780874]  dump_stack_lvl+0x110/0x218
+[   10.781080]  dump_stack+0x18/0x24
+[   10.781250]  nmi_cpu_backtrace+0x22c/0x2f0
+[   10.781315]  nmi_trigger_cpumask_backtrace+0x208/0x2bc
+[   10.781474]  arch_trigger_cpumask_backtrace+0x18/0x24
+[   10.781560]  cpumask_backtrace+0x10/0x1c
+[   10.781797]  sysrq_handle_showallcpus+0x1c/0x28
+[   10.781867]  __handle_sysrq+0xd4/0x1b8
+[   10.781925]  write_sysrq_trigger+0xc0/0xd8
+[   10.781977]  proc_reg_write+0x9c/0xf0
+[   10.782038]  vfs_write+0xd4/0x370
+[   10.782114]  ksys_write+0x70/0x108
+[   10.782168]  __arm64_sys_write+0x18/0x24
+[   10.782220]  invoke_syscall+0x54/0x10c
+[   10.782274]  el0_svc_common.constprop.0+0x40/0xe0
+[   10.782326]  do_el0_svc+0x1c/0x28
+[   10.782380]  el0_svc+0x148/0xa04
+[   10.782438]  el0t_64_sync_handler+0x10c/0x208
+[   10.782494]  el0t_64_sync+0x1ac/0x1b0
+[   10.783141] Sending NMI from CPU 1 to CPUs 0:
+[   10.787278] NMI backtrace for cpu 0
+[   10.787375] CPU: 0 UID: 0 PID: 0 Comm: swapper/0 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.787461] Tainted: [O]=OOT_MODULE
+[   10.787487] Hardware name: linux,dummy-virt (DT)
+[   10.787547] pstate: 60400005 (nZCv daif -ALLINT +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+[   10.787613] pc : handle_softirqs+0x108/0x2a0
+[   10.787706] lr : handle_softirqs+0x108/0x2a0
+[   10.787755] sp : ffff800080003f50
+[   10.787795] x29: ffff800080003f50 x28: 0000000000000101 x27: 0000000000000020
+[   10.787895] x26: ffff9e847e0c50d0 x25: ffff9e847e0d3f80 x24: 0000000000000006
+[   10.788018] x23: ffff9e847e0c50f8 x22: 0000000000000005 x21: ffff9e847d656f90
+[   10.788148] x20: ffff9e847e0c50c0 x19: 0000000000000007 x18: 0000000000000000
+[   10.788245] x17: fff0617bc2662000 x16: ffff800080000000 x15: 09cfa8e5c1959c86
+[   10.788327] x14: 003e74ed5934aa84 x13: 0000000000000268 x12: 0000000000000000
+[   10.788410] x11: 0000000000000001 x10: 0000000000000001 x9 : 0000000000015ab9
+[   10.788518] x8 : fff000003fcc4200 x7 : fff000003fcc4180 x6 : ffff9e847e0c8eb8
+[   10.788640] x5 : 000000000000b8e6 x4 : 0000000000000001 x3 : ffffffff00011b7a
+[   10.788737] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff9e847e0d3f80
+[   10.788836] Call trace:
+[   10.788862]  handle_softirqs+0x108/0x2a0 (P)
+[   10.789006]  __do_softirq+0x14/0x20
+[   10.789179]  ____do_softirq+0x10/0x1c
+[   10.789237]  call_on_irq_stack+0x40/0x68
+[   10.789295]  do_softirq_own_stack+0x1c/0x28
+[   10.789349]  __irq_exit_rcu+0xe0/0x118
+[   10.789423]  irq_exit_rcu+0x10/0x1c
+[   10.789484]  el1_interrupt+0x7dc/0xdec
+[   10.789582]  el1h_64_irq_handler+0x18/0x24
+[   10.789641]  el1h_64_irq+0x80/0x84
+[   10.789838]  default_idle_call+0x2c/0x80 (P)
+[   10.789911]  do_idle+0x2c8/0x3d4
+[   10.789975]  cpu_startup_entry+0x38/0x3c
+[   10.790035]  kernel_init+0x0/0x1e8
+[   10.790092]  start_kernel+0x808/0x9d0
+[   10.790174]  __primary_switched+0x88/0x90
+[   10.798677] perf: interrupt took too long (50852 > 50623), lowering kernel.perf_event_max_sample_rate to 3750
+[   10.994735] sysrq: Show backtrace of all active CPUs
+[   10.994974] NMI backtrace for cpu 1
+[   10.995234] CPU: 1 UID: 0 PID: 64 Comm: init Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.995455] Tainted: [O]=OOT_MODULE
+[   10.995646] Hardware name: linux,dummy-virt (DT)
+[   10.995685] Call trace:
+[   10.995820]  show_stack+0x18/0x24 (C)
+[   10.995916]  dump_stack_lvl+0x110/0x218
+[   10.996130]  dump_stack+0x18/0x24
+[   10.996264]  nmi_cpu_backtrace+0x22c/0x2f0
+[   10.996330]  nmi_trigger_cpumask_backtrace+0x208/0x2bc
+[   10.996488]  arch_trigger_cpumask_backtrace+0x18/0x24
+[   10.996574]  cpumask_backtrace+0x10/0x1c
+[   10.996706]  sysrq_handle_showallcpus+0x1c/0x28
+[   10.996791]  __handle_sysrq+0xd4/0x1b8
+[   10.996999]  write_sysrq_trigger+0xc0/0xd8
+[   10.997054]  proc_reg_write+0x9c/0xf0
+[   10.997115]  vfs_write+0xd4/0x370
+[   10.997170]  ksys_write+0x70/0x108
+[   10.997221]  __arm64_sys_write+0x18/0x24
+[   10.997273]  invoke_syscall+0x54/0x10c
+[   10.997327]  el0_svc_common.constprop.0+0x40/0xe0
+[   10.997379]  do_el0_svc+0x1c/0x28
+[   10.997430]  el0_svc+0x148/0xa04
+[   10.997488]  el0t_64_sync_handler+0x10c/0x208
+[   10.997562]  el0t_64_sync+0x1ac/0x1b0
+[   10.998215] Sending NMI from CPU 1 to CPUs 0:
+[   10.998381] NMI backtrace for cpu 0
+[   10.998572] CPU: 0 UID: 0 PID: 0 Comm: swapper/0 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   10.998729] Tainted: [O]=OOT_MODULE
+[   10.998758] Hardware name: linux,dummy-virt (DT)
+[   10.998791] pstate: 614000c5 (nZCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   10.998902] pc : fpsimd_thread_switch+0x114/0x290
+[   10.999014] lr : __switch_to+0x80/0x2d0
+[   10.999111] sp : ffff9e847e0c3be0
+[   10.999170] x29: ffff9e847e0c3c30 x28: 0000000000000000 x27: ffff9e847e0d45d0
+[   10.999344] x26: fff0617bc2662000 x25: e9ff9e847c536028 x24: 0000000000000000
+[   10.999494] x23: ffff9e847d662100 x22: 0000000000000000 x21: ffff9e847e0d3f80
+[   10.999607] x20: ffff9e847e0d3f80 x19: fff0000003aa8000 x18: 0000000000000001
+[   10.999698] x17: 0000000000000000 x16: 0000000000000000 x15: fff0000003aa8080
+[   10.999826] x14: 0000000000000000 x13: 0000000000000000 x12: 0000000000000001
+[   10.999918] x11: 0000000000000000 x10: fff000003fcc4180 x9 : 0000000000015ab9
+[   11.000016] x8 : fff000003fcc4200 x7 : fff000003fcc4180 x6 : fff0617bc2662000
+[   11.000122] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 00000000000000c0
+[   11.000235] x2 : 0000000000000000 x1 : 00000000000000c0 x0 : 00000000000000c0
+[   11.000322] Call trace:
+[   11.000348]  fpsimd_thread_switch+0x114/0x290 (P)
+[   11.000451]  __switch_to+0x80/0x2d0
+[   11.000599]  __schedule+0x388/0xdc8
+[   11.000712]  schedule_idle+0x28/0x48
+[   11.000770]  do_idle+0xd8/0x3d4
+[   11.000834]  cpu_startup_entry+0x38/0x3c
+[   11.000892]  kernel_init+0x0/0x1e8
+[   11.000953]  start_kernel+0x808/0x9d0
+[   11.001020]  __primary_switched+0x88/0x90
+[   11.208103] sysrq: Show backtrace of all active CPUs
+[   11.208599] NMI backtrace for cpu 1
+[   11.209056] CPU: 1 UID: 0 PID: 64 Comm: init Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   11.209389] Tainted: [O]=OOT_MODULE
+[   11.209439] Hardware name: linux,dummy-virt (DT)
+[   11.209498] Call trace:
+[   11.209569]  show_stack+0x18/0x24 (C)
+[   11.209724]  dump_stack_lvl+0x110/0x218
+[   11.209842]  dump_stack+0x18/0x24
+[   11.209943]  nmi_cpu_backtrace+0x22c/0x2f0
+[   11.210052]  nmi_trigger_cpumask_backtrace+0x208/0x2bc
+[   11.210157]  arch_trigger_cpumask_backtrace+0x18/0x24
+[   11.210274]  cpumask_backtrace+0x10/0x1c
+[   11.210377]  sysrq_handle_showallcpus+0x1c/0x28
+[   11.210497]  __handle_sysrq+0xd4/0x1b8
+[   11.210627]  write_sysrq_trigger+0xc0/0xd8
+[   11.210724]  proc_reg_write+0x9c/0xf0
+[   11.210840]  vfs_write+0xd4/0x370
+[   11.210946]  ksys_write+0x70/0x108
+[   11.211042]  __arm64_sys_write+0x18/0x24
+[   11.211139]  invoke_syscall+0x54/0x10c
+[   11.211239]  el0_svc_common.constprop.0+0x40/0xe0
+[   11.211337]  do_el0_svc+0x1c/0x28
+[   11.211437]  el0_svc+0x148/0xa04
+[   11.211562]  el0t_64_sync_handler+0x10c/0x208
+[   11.211669]  el0t_64_sync+0x1ac/0x1b0
+[   11.214011] Sending NMI from CPU 1 to CPUs 0:
+[   11.214749] NMI backtrace for cpu 0
+[   11.215070] CPU: 0 UID: 0 PID: 30 Comm: pr/ttyAMA0 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   11.215313] Tainted: [O]=OOT_MODULE
+[   11.215488] Hardware name: linux,dummy-virt (DT)
+[   11.215677] pstate: 404000c5 (nZcv daIF -ALLINT +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+[   11.215877] pc : call_on_irq_stack+0x3c/0x68
+[   11.216039] lr : do_softirq_own_stack+0x1c/0x28
+[   11.216219] sp : ffff800080004000
+[   11.216295] x29: ffff80008036bae0 x28: fff0000003aa8000 x27: fff0000003aa8648
+[   11.216786] x26: bb8f9e847c5352bc x25: fff0617bc2662000 x24: ffff9e847b410218
+[   11.216967] x23: 0000000081400005 x22: 00000000200003c0 x21: ffff80008036bba0
+[   11.217199] x20: 0000000000000000 x19: fff0000003aa8000 x18: 0000000000000006
+[   11.217601] x17: fff0617bc2662000 x16: ffff800080000000 x15: 026fe45fb1118622
+[   11.218059] x14: 00078b568e3d9d1a x13: 00000000000001aa x12: 0000000000000001
+[   11.218295] x11: 0000000000000001 x10: 0000000000000000 x9 : 00000000000000c0
+[   11.218580] x8 : fff000003fcc18c8 x7 : 110a952b2a7a4c4d x6 : ffff80008036bac0
+[   11.218766] x5 : 000000000b0c513b x4 : fff0617bc2662000 x3 : ffff9e847d656f20
+[   11.218946] x2 : fff0617bc2662000 x1 : ffff9e847b4166a0 x0 : 0000000000000000
+[   11.219162] Call trace:
+[   11.219242]  call_on_irq_stack+0x3c/0x68 (P)
+[   11.219389]  do_softirq_own_stack+0x1c/0x28
+[   11.219498]  __irq_exit_rcu+0xe0/0x118
+[   11.219706]  irq_exit_rcu+0x10/0x1c
+[   11.219827]  el1_interrupt+0x7dc/0xdec
+[   11.219941]  el1h_64_irq_handler+0x18/0x24
+[   11.220047]  el1h_64_irq+0x80/0x84
+[   11.220148]  raw_spin_rq_unlock_irq+0x1c/0x58 (P)
+[   11.220323]  finish_task_switch.isra.0+0x8c/0x2f4
+[   11.220442]  __schedule+0x38c/0xdc8
+[   11.220577]  schedule+0x34/0xd4
+[   11.220685]  nbcon_kthread_func+0x1f4/0x1fc
+[   11.220858]  kthread+0x118/0x124
+[   11.221032]  ret_from_fork+0x10/0x20
+[   11.227192] perf: interrupt took too long (63656 > 63565), lowering kernel.perf_event_max_sample_rate to 3000
+NMI_TEST: stress_ok=1 stress_pmu_delta=3332 stress_bt=8
+[   12.667250] psci: CPU1 killed (polled 0 ms)
+[   12.687000] Detected PIPT I-cache on CPU1
+[   12.688739] GICv3: CPU1: found redistributor 1 region 0:0x00000000080c0000
+[   12.692301] CPU1: Booted secondary processor 0x0000000001 [0x000f0510]
+[   12.713301] Sending NMI from CPU 0 to CPUs 1:
+[   12.713391] NMI backtrace for cpu 1
+[   12.713437] CPU: 1 UID: 0 PID: 65 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   12.713478] Tainted: [O]=OOT_MODULE
+[   12.713489] Hardware name: linux,dummy-virt (DT)
+[   12.713504] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   12.713534] pc : arch_counter_get_cntvct+0x8/0x18
+[   12.713568] lr : arch_counter_read+0x18/0x24
+[   12.713591] sp : ffff80008049be20
+[   12.713600] x29: ffff80008049be20 x28: 0000000000000000 x27: 0000000000000000
+[   12.713643] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[   12.713679] x23: ffff9e845dda1508 x22: ffff80008002b9f8 x21: 00000000000007cc
+[   12.713713] x20: 00000002bce54c94 x19: ffff9e847e67eac0 x18: 0000000000000014
+[   12.713748] x17: 00000000d7c57943 x16: ffff9e847b57518c x15: fff00000053c3140
+[   12.713783] x14: 008f0d84d83d2cd2 x13: 000000000000023d x12: 0000000000000000
+[   12.713817] x11: 00000000000000c0 x10: 579935477d96ba01 x9 : 845362e7b726ba73
+[   12.713852] x8 : fff00000053c4078 x7 : fff000003fcde180 x6 : 0000000000000000
+[   12.713885] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 0000000000153311
+[   12.713919] x2 : 001a76e700000000 x1 : ffff9e847c24be00 x0 : 000000030206a74c
+[   12.713955] Call trace:
+[   12.713966]  arch_counter_get_cntvct+0x8/0x18 (P)
+[   12.713996]  ktime_get+0x40/0xcc
+[   12.714023]  holder_fn+0x94/0x130 [nmi_probe]
+[   12.714060]  kthread+0x118/0x124
+[   12.714085]  ret_from_fork+0x10/0x20
+[   14.221272] Sending NMI from CPU 0 to CPUs 1:
+[   14.221361] NMI backtrace for cpu 1
+[   14.221393] CPU: 1 UID: 0 PID: 66 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   14.221430] Tainted: [O]=OOT_MODULE
+[   14.221441] Hardware name: linux,dummy-virt (DT)
+[   14.221454] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   14.221477] pc : arch_counter_get_cntvct+0x8/0x18
+[   14.221506] lr : arch_counter_read+0x18/0x24
+[   14.221534] sp : ffff8000804a3e20
+[   14.221544] x29: ffff8000804a3e20 x28: 0000000000000000 x27: 0000000000000000
+[   14.221585] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[   14.221621] x23: ffff9e845dda1508 x22: ffff80008002b9f8 x21: 00000000000007e4
+[   14.221655] x20: 00000003341ae094 x19: ffff9e847e67eac0 x18: 0000000000000000
+[   14.221690] x17: 00000000d7c57943 x16: ffff9e847b57518c x15: fff00000049a6200
+[   14.221725] x14: 0000000000000004 x13: 00000000000001b0 x12: 0000000000000000
+[   14.221760] x11: 00000000000000c0 x10: 1308812766c797cd x9 : 7092c6ffd1a4a19c
+[   14.221794] x8 : fff00000049a7138 x7 : fff000003fcde180 x6 : 0000000000000000
+[   14.221828] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 000000000014c501
+[   14.221862] x2 : 000bcd3d80000000 x1 : ffff9e847c24be00 x0 : 000000035be87179
+[   14.221896] Call trace:
+[   14.221908]  arch_counter_get_cntvct+0x8/0x18 (P)
+[   14.221939]  ktime_get+0x40/0xcc
+[   14.221964]  holder_fn+0x94/0x130 [nmi_probe]
+[   14.221999]  kthread+0x118/0x124
+[   14.222022]  ret_from_fork+0x10/0x20
+[   15.729322] Sending NMI from CPU 0 to CPUs 1:
+[   15.729408] NMI backtrace for cpu 1
+[   15.729442] CPU: 1 UID: 0 PID: 67 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   15.729481] Tainted: [O]=OOT_MODULE
+[   15.729492] Hardware name: linux,dummy-virt (DT)
+[   15.729504] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   15.729533] pc : arch_counter_get_cntvct+0x8/0x18
+[   15.729562] lr : arch_counter_read+0x18/0x24
+[   15.729584] sp : ffff8000804abe20
+[   15.729593] x29: ffff8000804abe20 x28: 0000000000000000 x27: 0000000000000000
+[   15.729635] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4160
+[   15.729671] x23: ffff9e845dda1508 x22: ffff80008002b9f8 x21: 00000000000007f0
+[   15.729706] x20: 000000036fb5aa94 x19: ffff9e847e67eac0 x18: 0000000000000000
+[   15.729741] x17: ffff9e847e546760 x16: ffff9e847b57518c x15: fff00000049a10c0
+[   15.729776] x14: 0000000000000004 x13: 00000000000003ed x12: 0000000000000000
+[   15.729810] x11: 00000000000000c0 x10: 77e23cc3972b5565 x9 : 66f061e4fab13f29
+[   15.729845] x8 : fff00000049a1ff8 x7 : fff000003fcde180 x6 : 0000000000000000
+[   15.729879] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 0000000000158616
+[   15.729913] x2 : 001af0f900000000 x1 : ffff9e847c24be00 x0 : 00000003b5cb80bd
+[   15.729948] Call trace:
+[   15.729959]  arch_counter_get_cntvct+0x8/0x18 (P)
+[   15.729988]  ktime_get+0x40/0xcc
+[   15.730013]  holder_fn+0x94/0x130 [nmi_probe]
+[   15.730047]  kthread+0x118/0x124
+[   15.730070]  ret_from_fork+0x10/0x20
+[   17.237256] Sending NMI from CPU 0 to CPUs 1:
+[   17.237335] NMI backtrace for cpu 1
+[   17.237365] CPU: 1 UID: 0 PID: 68 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   17.237404] Tainted: [O]=OOT_MODULE
+[   17.237415] Hardware name: linux,dummy-virt (DT)
+[   17.237427] pstate: 214000c5 (nzCv daIF -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   17.237449] pc : arch_counter_get_cntvct+0x8/0x18
+[   17.237478] lr : arch_counter_read+0x18/0x24
+[   17.237499] sp : ffff8000804b3e20
+[   17.237514] x29: ffff8000804b3e20 x28: 0000000000000000 x27: 0000000000000000
+[   17.237557] x26: 0000000000000000 x25: 0000000000000000 x24: fff0000003a36a94
+[   17.237593] x23: ffff9e845dda1508 x22: ffff80008002ba88 x21: 00000000000007fc
+[   17.237628] x20: 00000003e6eb3e94 x19: ffff9e847e67eac0 x18: 0000000000000000
+[   17.237663] x17: ffff9e847e546760 x16: ffff9e847b57518c x15: fff00000049a51c0
+[   17.237697] x14: 0000000000000000 x13: 0000000000000243 x12: 0000000000000000
+[   17.237732] x11: 00000000000000c0 x10: 2f19f6fcf6d358bd x9 : b64581c251f1418c
+[   17.237767] x8 : fff00000049a60f8 x7 : fff000003fcde180 x6 : 0000000000000000
+[   17.237800] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 0000000000146efb
+[   17.237834] x2 : 000c474f80000000 x1 : ffff9e847c24be00 x0 : 000000040faca5e8
+[   17.237869] Call trace:
+[   17.237880]  arch_counter_get_cntvct+0x8/0x18 (P)
+[   17.237910]  ktime_get+0x40/0xcc
+[   17.237935]  holder_fn+0x94/0x130 [nmi_probe]
+[   17.237970]  kthread+0x118/0x124
+[   17.237995]  ret_from_fork+0x10/0x20
+[   18.745483] Sending NMI from CPU 0 to CPUs 1:
+[   20.245437] NMI backtrace for cpu 1
+[   20.245502] CPU: 1 UID: 0 PID: 69 Comm: nmi_holder/1 Tainted: G           O        7.3.0-rc6-00038-g53b5c789c1e7 #4 PREEMPT 
+[   20.245550] Tainted: [O]=OOT_MODULE
+[   20.245562] Hardware name: linux,dummy-virt (DT)
+[   20.245576] pstate: 81400005 (Nzcv daif -ALLINT +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   20.245600] pc : holder_fn+0xa8/0x130 [nmi_probe]
+[   20.245638] lr : holder_fn+0x94/0x130 [nmi_probe]
+[   20.245662] sp : ffff80008049be60
+[   20.245671] x29: ffff80008049be60 x28: 0000000000000000 x27: 0000000000000000
+[   20.245713] x26: 0000000000000000 x25: 0000000000000000 x24: ffff9e845dda4178
+[   20.245749] x23: ffff9e845dda1508 x22: ffff80008002b9f8 x21: fff00000053c30c0
+[   20.245784] x20: 00000004b2da26a9 x19: ffff9e845dda4178 x18: 0000000000000014
+[   20.245819] x17: 00000000c10fcdee x16: ffff9e847b57518c x15: fff00000053c3140
+[   20.245853] x14: 0000000026058df6 x13: 00000000000000cb x12: 0000000000000000
+[   20.245889] x11: 00000000000000c0 x10: 5c6e68998f4e72b6 x9 : 345405288618d298
+[   20.245924] x8 : fff00000053c4078 x7 : fff000003fcde180 x6 : 0000000000000000
+[   20.245957] x5 : 0000000000000000 x4 : fff0617bc267c000 x3 : 000000000015da37
+[   20.245991] x2 : 000c845880000000 x1 : 000000000000089c x0 : 0000000000000001
+[   20.246026] Call trace:
+[   20.246037]  holder_fn+0xa8/0x130 [nmi_probe] (P)
+[   20.246071]  kthread+0x118/0x124
+NMI_TEST: [   20.246102]  ret_from_fork+0x10/0x20
+[   20.249471] nmi_probe: rerun single=3/3 broadcast=1/1
+hotplug_ok=1 retest_fast=1
+NMI_TEST: supports=1 expected=1
+NMI_TEST: active=1 expected=1
+NMI_TEST: pseudo=0 expected=0
+NMI_TEST: gic_nmi=1 expected=1
+NMI_TEST: pseudo_log=0 expected=0
+NMI_TEST: arch_off_log=0 expected=0
+NMI_TEST: nmi_irqs=4 expected=gt0
+NMI_TEST: ipi_nmi=3 expected=gt0
+NMI_TEST: pmu_log=1 expected=1
+NMI_TEST: fast=1 expected=1
+NMI_TEST: bc_fast=1 expected=1
+NMI_TEST: bc_cpus=1 expected=gt0
+NMI_TEST: sysrq_bt=1 expected=1
+NMI_TEST: perf_ok=1 expected=1
+NMI_TEST: stress_ok=1 expected=1
+NMI_TEST: stress_pmu_delta=3332 expected=gt0
+NMI_TEST: stress_bt=8 expected=gt0
+NMI_TEST: hotplug_ok=1 expected=1
+NMI_TEST: retest_fast=1 expected=1
+NMI_TEST: RESULT PASS
+NMI_TEST: shutdown=poweroff
+[   21.290901] reboot: Power down
